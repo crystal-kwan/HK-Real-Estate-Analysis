@@ -19,7 +19,7 @@ import numpy_financial as npf
 #-----------------------------------------------------------------------------
 
 #Read Class A Housing Prices
-df1=pd.read_csv("/Users/kwanw4/Downloads/FINA2390_Project 3/average_prices_by_class.csv")
+df1=pd.read_csv("/average_prices_by_class.csv")
 df1.drop(df1.head(9).index,inplace=True)
 df1.drop(df1.tail(8).index,inplace=True)
 df1=df1[df1.columns[1:15]]
@@ -43,7 +43,7 @@ df1=df1.drop(['Class_A_HK','Class_A_KL','Class_A_NT'], axis=1)
 
 
 #Read Monthly Median Household Income (MMHI)
-df2=pd.read_csv("/Users/kwanw4/Downloads/FINA2390_Project 3/MMHHI.csv")
+df2=pd.read_csv("/MMHHI.csv")
 df2=df2[df2.columns[2:5]]
 df2=df2.dropna(axis=0, how='any')
 df2.columns =['Year', 'Month','MMHHI']
@@ -52,7 +52,7 @@ df2["Month"] = pd.to_numeric(df2["Month"]).astype(int)
 
 
 #Read Best-lending rate
-df3=pd.read_csv("/Users/kwanw4/Downloads/FINA2390_Project 3/best_lending_rate.csv")
+df3=pd.read_csv("/best_lending_rate.csv")
 df3.drop(df3.head(243).index,inplace=True)
 df3.drop(df3.tail(31).index,inplace=True)
 df3[df3.columns[0]]=df3[df3.columns[0]].fillna(method="ffill")
